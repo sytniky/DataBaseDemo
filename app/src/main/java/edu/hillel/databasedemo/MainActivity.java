@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
     private void writeData() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("name", etName.getText().toString());
-        cv.put("adress", etAdress.getText().toString());
-        db.insert("customer", null, cv);
+        cv.put(DBContract.Customer.COLUMN_NAME, etName.getText().toString());
+        cv.put(DBContract.Customer.COLUMN_ADRESS, etAdress.getText().toString());
+        db.insert(DBContract.Customer.TABLE_NAME, null, cv);
         db.close();
 //        etName.setText("");
 //        etAdress.setText("");

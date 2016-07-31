@@ -9,18 +9,16 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DB_NAME = "MyDatabase";
-
     public DatabaseHelper(Context context) {
-        super(context, DB_NAME, null, 1);
+        super(context, DBContract.DB_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE customer (" +
-            "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "name TEXT," +
-            "adress TEXT);");
+        sqLiteDatabase.execSQL("CREATE TABLE " + DBContract.Customer.TABLE_NAME + " (" +
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + DBContract.Customer.COLUMN_NAME + " TEXT,"
+                + DBContract.Customer.COLUMN_ADRESS + " TEXT);");
     }
 
     @Override

@@ -23,7 +23,7 @@ public class MyCursorAdapter extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
         View v = mInflater.inflate(android.R.layout.simple_list_item_1, viewGroup, false);
-        String customerName = cursor.getString(cursor.getColumnIndex("name"));
+        String customerName = cursor.getString(cursor.getColumnIndex(DBContract.Customer.COLUMN_NAME));
         TextView tv = (TextView) v.findViewById(android.R.id.text1);
         tv.setText(customerName);
         return v;
@@ -31,7 +31,7 @@ public class MyCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        String customerName = cursor.getString(cursor.getColumnIndex("name"));
+        String customerName = cursor.getString(cursor.getColumnIndex(DBContract.Customer.COLUMN_NAME));
         TextView tv = (TextView) view.findViewById(android.R.id.text1);
         tv.setText(customerName);
     }
