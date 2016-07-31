@@ -1,6 +1,7 @@
 package edu.hillel.databasedemo;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -57,13 +58,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readData() {
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor c = db.query("customer", new String[]{"_id", "name", "adress"}, null, null, null, null, null);
-        while (c.moveToNext()) {
-            long id = c.getLong(c.getColumnIndex("_id"));
-            String name = c.getString(c.getColumnIndex("name"));
-            String adress = c.getString(c.getColumnIndex("adress"));
-            Log.d("database", id + " " + name + " " + adress);
-        }
+//        SQLiteDatabase db = dbHelper.getReadableDatabase();
+//        Cursor c = db.query("customer", new String[]{"_id", "name", "adress"}, null, null, null, null, null);
+//        while (c.moveToNext()) {
+//            long id = c.getLong(c.getColumnIndex("_id"));
+//            String name = c.getString(c.getColumnIndex("name"));
+//            String adress = c.getString(c.getColumnIndex("adress"));
+//            Log.d("database", id + " " + name + " " + adress);
+//        }
+
+        startActivity(new Intent(this, CustomersActivity.class));
     }
 }
