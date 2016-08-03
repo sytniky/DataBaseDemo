@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(DBContract.Customer.COLUMN_NAME, etName.getText().toString());
+        cv.put(DBContract.Customer.COLUMN_AGE, (int) (Math.random() * 90 + 18));
         cv.put(DBContract.Customer.COLUMN_ADRESS, etAdress.getText().toString());
         db.insert(DBContract.Customer.TABLE_NAME, null, cv);
         db.close();

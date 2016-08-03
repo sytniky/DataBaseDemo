@@ -13,8 +13,9 @@ public final class DBContract {
 
         public static final String TABLE_NAME = "customer";
         public static final String COLUMN_NAME = "name";
+        public static final String COLUMN_AGE = "age";
         public static final String COLUMN_ADRESS = "adress";
 
-        public static final String[] DEFAULT_PROJECTION = {_ID, COLUMN_NAME, COLUMN_ADRESS};
+        public static final String[] DEFAULT_PROJECTION = {_ID, COLUMN_NAME, COLUMN_AGE, COLUMN_ADRESS};
     }
 }

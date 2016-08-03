@@ -18,6 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE " + DBContract.Customer.TABLE_NAME + " (" +
             "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + DBContract.Customer.COLUMN_NAME + " TEXT,"
+                + DBContract.Customer.COLUMN_AGE + " INTEGER,"
                 + DBContract.Customer.COLUMN_ADRESS + " TEXT);");
     }
 
