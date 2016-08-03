@@ -39,7 +39,7 @@ public class CustomersActivity extends ListActivity implements AdapterView.OnIte
     public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long id) {
 
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        int n = db.delete("customer", "_id = " + id, null);
+        int n = db.delete(DBContract.Customer.TABLE_NAME, DBContract.Customer._ID + " = " + id, null);
         Log.d("CustomersActivity", "delate rows: " + n);
         mAdapter.changeCursor(getData());
         mAdapter.notifyDataSetChanged();
@@ -47,6 +47,6 @@ public class CustomersActivity extends ListActivity implements AdapterView.OnIte
     }
 
     private Cursor getData() {
-        return  mDb.query("customer", new String[]{"_id", "name", "adress"}, null, null, null, null, null);
+        return  mDb.query(DBContract.Customer.TABLE_NAME, DBContract.Customer.DEFAULT_PROJECTION, null, null, null, null, null);
     }
 }
